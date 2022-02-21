@@ -49,7 +49,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | User Providers
+    | WpUser Providers
     |--------------------------------------------------------------------------
     |
     | All authentication drivers have a user provider. This defines how the
@@ -72,7 +72,7 @@ return [
 
         'corcel' => [
             'driver' => 'corcel',
-            'table' => App\Models\User::class,
+            'table' => App\Models\WpUser::class,
         ],
     ],
 
