@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -45,14 +47,7 @@ class LoginController extends Controller
         $this->clearLoginAttempts($request);
 
         $token = Auth::user()->createToken('ua');
-        return redirect('http://wordpress.test?token=' . $token->accessToken->token);
+        return redirect(config('app.redirect_url'). '?token=' . $token->accessToken->token);
 
-//        if ($response = $this->authenticated($request, $this->guard()->user())) {
-//            return $response;
-//        }
-//
-//        return $request->wantsJson()
-//            ? new JsonResponse([], 204)
-//            : redirect()->intended($this->redirectPath());
     }
 }

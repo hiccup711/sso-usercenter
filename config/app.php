@@ -54,6 +54,8 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
 
+    'redirect_url' => env('REDIRECT_WORDPRESS', 'http://localhost'),
+
     'asset_url' => env('ASSET_URL', null),
 
     /*
